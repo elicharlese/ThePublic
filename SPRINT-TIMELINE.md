@@ -2,7 +2,7 @@
 
 ## Sprint 1: Project Initiation & Research
 
-- **Duration**: 1 Day
+- **Duration**: Day 1-3
 
 - [ ] Project setup (repos, boards, etc.) `points 3`
 - [ ] Competitive analysis `points 5`
@@ -15,7 +15,7 @@
 
 ## Sprint 2: Core Wi-Fi Sharing Feature
 
-- **Duration**: 2 Days
+- **Duration**: Day 4
 
 - [ ] Design Wi-Fi sharing module `points 5`
 - [ ] Implement Wi-Fi sharing protocol `points 13`
@@ -27,7 +27,7 @@
 
 ## Sprint 3: Network Customization & User Settings
 
-- **Duration**: Days 2
+- **Duration**: Day 5
 
 - [ ] UI design for network customization `points 5`
 - [ ] Implement network settings backend `points 8`
@@ -39,7 +39,7 @@
 
 ## Sprint 4: Enhanced Usability & Remote Connections
 
-- **Duration**: 2 Days
+- **Duration**: Day 6
 
 - [ ] Improve UX flow for seamless integration `points 7`
 - [ ] Preliminary work for remote hub connections `points 9`
@@ -51,7 +51,7 @@
 
 ## Sprint 6: Network Monitoring with Wireshark and Nmap Integration
 
-- **Duration**: 3 Days
+- **Duration**: Day 7
 
 - [ ] Research integration capabilities of Wireshark and Nmap `points 5`
 - [ ] Design data filtering and analytics UI `points 6`
@@ -65,7 +65,7 @@
 
 ## Sprint 5: Public Beta & Feedback Iteration
 
-- **Duration**: 1 Day
+- **Duration**: Day 8
 
 - [ ] Public beta release preparations `points 4`
 - [ ] Develop feedback collection mechanism `points 5`
