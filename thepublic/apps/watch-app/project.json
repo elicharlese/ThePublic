@@ -1,0 +1,54 @@
+{
+  "name": "watch-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/watch-app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/watch-app",
+        "main": "apps/watch-app/src/main.tsx",
+        "tsConfig": "apps/watch-app/tsconfig.app.json",
+        "rspackConfig": "apps/watch-app/rspack.config.js",
+        "assets": [
+          "apps/watch-app/src/favicon.ico",
+          "apps/watch-app/src/assets"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "watch-app:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "watch-app:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "watch-app:build",
+        "spa": true
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "mobile-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mobile-app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/mobile-app",
+        "main": "apps/mobile-app/src/main.tsx",
+        "tsConfig": "apps/mobile-app/tsconfig.app.json",
+        "rspackConfig": "apps/mobile-app/rspack.config.js",
+        "assets": [
+          "apps/mobile-app/src/favicon.ico",
+          "apps/mobile-app/src/assets"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "mobile-app:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "mobile-app:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "mobile-app:build",
+        "spa": true
+      }
+    }
+  }
+}

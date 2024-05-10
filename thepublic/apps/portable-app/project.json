@@ -1,0 +1,54 @@
+{
+  "name": "portable-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/portable-app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/portable-app",
+        "main": "apps/portable-app/src/main.tsx",
+        "tsConfig": "apps/portable-app/tsconfig.app.json",
+        "rspackConfig": "apps/portable-app/rspack.config.js",
+        "assets": [
+          "apps/portable-app/src/favicon.ico",
+          "apps/portable-app/src/assets"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "portable-app:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "portable-app:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "portable-app:build",
+        "spa": true
+      }
+    }
+  }
+}

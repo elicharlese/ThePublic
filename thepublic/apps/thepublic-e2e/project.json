@@ -1,0 +1,9 @@
+{
+  "name": "thepublic-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/thepublic-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["thepublic"],
+  "// targets": "to see all targets run: nx show project thepublic-e2e --web",
+  "targets": {}
+}

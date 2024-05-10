@@ -1,0 +1,54 @@
+{
+  "name": "desktop-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/desktop-app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/desktop-app",
+        "main": "apps/desktop-app/src/main.tsx",
+        "tsConfig": "apps/desktop-app/tsconfig.app.json",
+        "rspackConfig": "apps/desktop-app/rspack.config.js",
+        "assets": [
+          "apps/desktop-app/src/favicon.ico",
+          "apps/desktop-app/src/assets"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "desktop-app:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "desktop-app:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "desktop-app:build",
+        "spa": true
+      }
+    }
+  }
+}
