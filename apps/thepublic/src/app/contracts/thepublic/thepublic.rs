@@ -124,4 +124,33 @@ impl ThePublicContract {
     pub fn get_user_data(&self, account_id: AccountId) -> Option<UserData> {
         self.user_data.get(&account_id).cloned()
     }
+
+    // Update method to update user data
+    pub fn update_user_data(
+        &mut self,
+        account_id: AccountId,
+        username: Option<String>,
+        email: Option<String>,
+        posts: Option<Vec<Post>>,
+        followers: Option<Vec<AccountId>>,
+        following: Option<Vec<AccountId>>,
+    ) {
+        if let Some(user_data) = self.user_data.get_mut(&account_id) {
+            if let Some(username) = username {
+                user_data.username = username;
+            }
+            if let Some(email) = email {
+                user_data.email = email;
+            }
+            if let Some(posts) = posts {
+                user_data.social_data.posts = posts;
+            }
+            if let Some(followers) = followers {
+                user_data.social_data.followers = followers;
+            }
+            if let Some(following) = following {
+                user_data.social_data.following = following;
+            }
+        }
+    }
 }
