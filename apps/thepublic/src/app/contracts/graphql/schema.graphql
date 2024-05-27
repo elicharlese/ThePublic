@@ -1,0 +1,17 @@
+type Query {
+  wifiCredentials(accountId: String!): WifiCredentials
+}
+
+type Mutation {
+  requestAccess(accountId: String!): RequestResponse
+}
+
+type WifiCredentials {
+  ssid: String!
+  password: String!
+}
+
+type RequestResponse {
+  success: Boolean!
+  message: String
+}

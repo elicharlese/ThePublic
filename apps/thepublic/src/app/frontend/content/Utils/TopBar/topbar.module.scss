@@ -1,0 +1,21 @@
+.top-bar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  font-size: 14px;
+}
+
+.network-traffic-log {
+  background-color: #2c3e50;
+  color: white;
+  padding: 5px; /* Reduced padding to match a thinner top bar */
+  font-size: 12px; /* Smaller font size for better fit */
+  overflow-y: scroll;
+  max-height: 100px; /* Constrain height to keep it thin */
+}
