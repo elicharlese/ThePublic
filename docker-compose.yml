@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:v2.4
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.httpChallenge.entryPoint=web"
+      - "--certificatesresolvers.myresolver.acme.httpChallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=your-email@example.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"
+
+  app:
+    image: your-app-image
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/networksettings
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`yourdomain.com`)"
+      - "traefik.http.routers.app.entrypoints=websecure"
+      - "traefik.http.routers.app.tls.certresolver=myresolver"
+
+  mongo:
+    image: mongo:4.4
+    volumes:
+      - ./data/db:/data/db
