@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('./mongo'); // This ensures mongo.js is executed and connected
 const bodyParser = require('body-parser');
 const networkSettingsRoutes = require('./routes/networkSettingsRoutes');
+const analyticsRoutes = require('./routes/thepublic/analytics/analyticsRoutes'); // Added analytics routes
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -29,6 +30,7 @@ app.use(bodyParser.json());
 
 // Use the network settings routes
 app.use('/api/network-settings', networkSettingsRoutes);
+app.use('/api/analytics', analyticsRoutes); // Added analytics routes
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
