@@ -1,0 +1,8 @@
+name = "my-worker"
+type = "javascript"
+
+account_id = "" // TODO: Add account_id
+workers_dev = true
+route = ""
+zone_id = "" // TODO: Add zone_id
+compatibility_date = "2024-06-24"

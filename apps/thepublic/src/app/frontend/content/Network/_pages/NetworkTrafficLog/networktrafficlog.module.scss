@@ -1,8 +1,32 @@
-.output-log {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 10px;
-  height: 200px;
-  overflow-y: scroll;
-  margin-top: 20px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.networkTrafficLogContainer {
+  @apply p-6 bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+}
+
+h1 {
+  @apply text-3xl mb-5;
+}
+
+.outputLog {
+  @apply bg-gray-100 dark:bg-gray-800;
+  @apply border border-gray-300 dark:border-gray-700;
+  @apply p-4 rounded;
+  @apply max-h-96 overflow-y-scroll;
+  @apply mt-5;
+}
+
+.logEntry {
+  @apply mb-2;
+  @apply p-2;
+  @apply bg-white dark:bg-gray-700;
+  @apply border-b border-gray-200 dark:border-gray-600;
+  @apply last:border-b-0;
+}
+
+.error {
+  @apply text-red-500;
 }

@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dashboardContainer {
+  @apply p-6 bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+}
+
+h1 {
+  @apply text-3xl mb-5;
+}
+
+.nav ul {
+  @apply flex gap-4 list-none p-0;
+
+  li {
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.sections {
+  @apply mt-6;
+
+  > div {
+    @apply mb-6;
+  }
+}

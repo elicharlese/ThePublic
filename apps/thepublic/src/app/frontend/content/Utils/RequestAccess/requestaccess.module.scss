@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.requestAccessContainer {
+  @apply p-6 bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+  @apply max-w-4xl mx-auto;
+  @apply border rounded-lg shadow-lg;
+  @apply text-center;
+}
+
+h1 {
+  @apply text-3xl mb-5;
+}
+
+.credentials {
+  @apply bg-green-100 dark:bg-green-700 p-4 rounded;
+}
+
+.notAuthorized {
+  @apply bg-red-100 dark:bg-red-700 p-4 rounded;
+
+  p {
+    @apply mb-4 font-medium;
+  }
+}
+
+.error {
+  @apply text-red-500 mb-4;
+}
+
+.requestButton {
+  @apply bg-blue-500 text-white px-4 py-2 rounded;
+  @apply hover:bg-blue-700;
+  @apply transition duration-300;
+  @apply focus:outline-none;
+}

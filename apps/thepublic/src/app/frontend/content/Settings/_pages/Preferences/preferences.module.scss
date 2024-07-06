@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.preferencesContainer {
+  @apply p-6 bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+  @apply max-w-4xl mx-auto;
+  @apply border rounded-lg shadow-lg;
+}
+
+h1 {
+  @apply text-3xl mb-5;
+}
+
+.message {
+  @apply mb-4 p-3 rounded bg-green-200 dark:bg-green-700;
+  @apply text-green-800 dark:text-green-200;
+}
+
+.form {
+  @apply mb-6;
+}
+
+.formGroup {
+  @apply mb-4;
+  @apply flex flex-col;
+
+  label {
+    @apply mb-1 font-bold;
+  }
+
+  input[type="checkbox"] {
+    @apply mt-2;
+    cursor: pointer;
+  }
+
+  select {
+    @apply p-3 border border-gray-300 rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
+    /* Adjust for dark mode */
+    @apply dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+  }
+}
+
+.saveButton {
+  @apply bg-blue-500 text-white p-3 rounded;
+  @apply hover:bg-blue-700;
+  @apply transition duration-300;
+}

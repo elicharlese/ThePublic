@@ -1,0 +1,14 @@
+type Query {
+  purchases(account: String!): [Purchase]
+}
+
+type Purchase {
+  id: ID!
+  item: String!
+  date: String!
+  amount: Float!
+}
+
+type Mutation {
+  exampleMutation(param: String!): String
+}

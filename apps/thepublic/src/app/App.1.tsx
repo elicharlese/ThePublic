@@ -6,6 +6,9 @@ import { RemoteHubProvider } from './frontend/context/RemoteHubContext';
 import TopBar from './frontend/content/Utils/TopBar/TopBar';
 import BottomBar from './frontend/content/Utils/BottomBar/BottomBar';
 import styles from './App.module.scss';
+import { PortableApp } from 'portable-app';
+
+
 
 const NetworkTrafficLog = lazy(() => import('./frontend/content/Network/NetworkTrafficLog'));
 const CommunitySocialNetwork = lazy(() => import('./frontend/content/CommunitySocialNetwork'));

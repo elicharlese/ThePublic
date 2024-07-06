@@ -1,0 +1,1 @@
+export { default as PortableApp } from './app/app';

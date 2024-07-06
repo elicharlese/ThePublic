@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.signUpContainer {
+  @apply p-6 bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+  @apply max-w-md mx-auto;
+  @apply border rounded-lg shadow-lg;
+  @apply text-center;
+}
+
+h2 {
+  @apply text-3xl mb-5;
+}
+
+.signUpForm {
+  @apply space-y-4;
+
+  .formGroup {
+    @apply flex flex-col;
+
+    label {
+      @apply mb-2 font-medium;
+    }
+
+    input {
+      @apply p-3 border border-gray-300 rounded;
+      @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
+
+      /* Adjust for dark mode */
+      @apply dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+    }
+  }
+
+  .submitButton {
+    @apply bg-blue-500 text-white px-4 py-2 rounded;
+    @apply hover:bg-blue-700;
+    @apply transition duration-300;
+    @apply focus:outline-none;
+  }
+}
+
+.errorMessage {
+  @apply text-red-500;
+}
+
+.successMessage {
+  @apply text-green-500;
+}

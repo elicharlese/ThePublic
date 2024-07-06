@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.quickMenuContainer {
+  @apply relative;
+}
+
+.menuButton {
+  @apply bg-blue-500 text-white px-4 py-2 rounded;
+  @apply hover:bg-blue-700;
+  @apply transition duration-300;
+  @apply focus:outline-none;
+}
+
+.menu {
+  @apply bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+  @apply border border-gray-300 dark:border-gray-700;
+  @apply absolute top-12 right-0 mt-2 w-48 rounded shadow-lg;
+
+  ul {
+    @apply list-none p-0 m-0;
+
+    li {
+      @apply p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300;
+
+      a {
+        @apply text-black dark:text-white no-underline;
+        @apply block;
+      }
+    }
+  }
+}

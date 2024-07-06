@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.socialContainer {
+  @apply p-6 bg-white dark:bg-dark-background;
+  @apply text-black dark:text-dark-text;
+  @apply max-w-6xl mx-auto;
+  @apply border rounded-lg shadow-lg;
+  @apply flex flex-col;
+}
+
+.nav {
+  @apply mb-4;
+
+  ul {
+    @apply flex gap-4 list-none p-0;
+
+    li {
+      @apply p-2 bg-blue-500 text-white rounded cursor-pointer;
+      @apply hover:bg-blue-700;
+      @apply transition duration-300;
+
+      a {
+        @apply text-white no-underline;
+      }
+    }
+  }
+}
+
+.content {
+  @apply flex-1;
+}

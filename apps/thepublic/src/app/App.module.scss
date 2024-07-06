@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.appContainer {
+  @apply font-sans;
+}
+
+body {
+  @apply bg-white text-black dark:bg-dark-background dark:text-dark-text;
+}
+
+.button {
+  @apply bg-baby-blue text-white px-4 py-2 rounded;
+  @apply dark:bg-black dark:text-white;
+}
+
+nav ul {
+  @apply flex gap-4 list-none p-0;
+}
+
+nav ul li {
+  @apply p-2 bg-blue-500 text-white rounded cursor-pointer
+  hover:bg-blue-700;
+}
+
+.homeContainer {
+  @apply max-w-6xl mx-auto p-5;
+}
+
+h1 {
+  @apply text-2xl mb-5;
+}

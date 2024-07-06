@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-org/embedded-app/*": ["apps/embedded-app/src/*"],
+      "portable-app": ["apps/portable-app/src/index.ts"],
+      "@my-org/main-app/*": ["apps/main-app/src/*"],
+      "@my-org/shared/*": ["libs/shared/src/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
