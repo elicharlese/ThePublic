@@ -1,0 +1,2 @@
+[dependancies]
+sentry = { version = "0.34.0", features = ["tracing"] }

@@ -1,5 +1,6 @@
 {pkgs}: {
   deps = [
+    pkgs.cliquer
     pkgs.helix
     pkgs.nvidia-podman
     pkgs.wget
